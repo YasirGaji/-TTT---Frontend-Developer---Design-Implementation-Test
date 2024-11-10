@@ -10,7 +10,6 @@ import {
   VStack,
   HStack,
   Heading,
-  Link as ChakraLink,
   useBreakpointValue,
 } from '@chakra-ui/react';
 import Image from 'next/image';
@@ -101,7 +100,7 @@ const Footer = () => {
           >
             <Flex align={'center'}>
               <Link href="/" passHref>
-                <ChakraLink
+                <Box
                   display="flex"
                   alignItems="center"
                   _hover={{ textDecoration: 'none' }}
@@ -118,7 +117,7 @@ const Footer = () => {
                   <Box color="#0B1B35" fontWeight="bold" fontSize="4xl">
                     Boldo
                   </Box>
-                </ChakraLink>
+                </Box>
               </Link>
             </Flex>
 

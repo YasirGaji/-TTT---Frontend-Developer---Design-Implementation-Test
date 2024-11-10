@@ -7,7 +7,6 @@ import {
   Stack,
   IconButton,
   useDisclosure,
-  Link as ChakraLink,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
@@ -20,8 +19,9 @@ interface NavLinkProps {
 }
 
 const NavLink = ({ children, href }: NavLinkProps) => (
-  <Link href={href} passHref>
-    <ChakraLink
+  <Link href={href} legacyBehavior passHref>
+    <Box
+      as="a"
       px={2}
       py={1}
       rounded={'md'}
@@ -30,9 +30,10 @@ const NavLink = ({ children, href }: NavLinkProps) => (
         color: 'mint.400',
       }}
       color="white"
+      cursor="pointer"
     >
       {children}
-    </ChakraLink>
+    </Box>
   </Link>
 );
 
@@ -46,9 +47,7 @@ const Navbar = () => {
       setIsScrolled(scrollPosition > 20);
     };
 
-    // scroll event listener
     window.addEventListener('scroll', handleScroll);
-
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -75,8 +74,9 @@ const Navbar = () => {
       >
         {/* Logo */}
         <Flex align={'center'}>
-          <Link href="/" passHref>
-            <ChakraLink
+          <Link href="/" legacyBehavior passHref>
+            <Box
+              as="a"
               display="flex"
               alignItems="center"
               _hover={{ textDecoration: 'none' }}
@@ -93,7 +93,7 @@ const Navbar = () => {
               <Box color="white" fontWeight="bold" fontSize="4xl">
                 Boldo
               </Box>
-            </ChakraLink>
+            </Box>
           </Link>
         </Flex>
 
@@ -145,7 +145,6 @@ const Navbar = () => {
             bg="white"
             color="#0A2640"
             w="full"
-            className='md:w-[128px] '
             rounded="full"
             _hover={{
               bg: 'whiteAlpha.900',

@@ -27,7 +27,7 @@ const HeroSection = () => {
 
   // Auto-scroll effect for the carousel
   useEffect(() => {
-    const scrollSpeed = .1; // Adjust speed as needed
+    const scrollSpeed = .1; 
     let animationFrameId: number;
     
     const animate = () => {
