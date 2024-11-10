@@ -53,7 +53,7 @@ const FaqSection = () => {
               as="h2"
               fontSize={{ base: '2xl', md: '3xl' }}
               mb="4"
-              color="#0A2640"
+              color="#000000"
             >
               We connect our customers <br className="hidden md:block" /> with
               the best, and help them <br className="hidden md:block" /> keep
@@ -70,7 +70,7 @@ const FaqSection = () => {
                       <AccordionButton
                         px={0}
                         _hover={{ bg: 'none' }}
-                        color="#0A2640"
+                        color="#000000"
                       >
                         <Box flex="1" textAlign="left">
                           {faq.question}

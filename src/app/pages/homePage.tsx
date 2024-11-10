@@ -1,5 +1,6 @@
 "use client"
 
+import BlogSection from "../components/blogSection";
 import BusinessSection from "../components/businessSection";
 import FaqSection from "../components/faqSection";
 import HeroSection from "../components/heroSection";
@@ -17,6 +18,7 @@ export default function HomePage() {
      <BusinessSection />
      <TestimonialSection />
      <FaqSection />
+     <BlogSection />
     </>
   );
 }
