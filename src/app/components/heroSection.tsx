@@ -8,7 +8,7 @@ import { useState, useEffect, useRef } from 'react';
 const HeroSection = () => {
   const [translateX, setTranslateX] = useState(0);
   const carouselRef = useRef(null);
-  
+
   // Array of logo images for the carousel
   const logos = [
     '/boldo.png',
@@ -27,11 +27,11 @@ const HeroSection = () => {
 
   // Auto-scroll effect for the carousel
   useEffect(() => {
-    const scrollSpeed = .1; 
+    const scrollSpeed = 0.1;
     let animationFrameId: number;
-    
+
     const animate = () => {
-      setTranslateX(prev => {
+      setTranslateX((prev) => {
         const newTranslate = prev - scrollSpeed;
         // Reset position when first set of logos is fully scrolled
         if (newTranslate <= -(100 / logos.length) * (logos.length / 2)) {
@@ -60,7 +60,13 @@ const HeroSection = () => {
         zIndex="0"
       />
 
-      <Container maxW="7xl" pt={{ base: '36', md: '32' }} pb={{ base: '16', md: '24' }} position="relative" zIndex="1">
+      <Container
+        maxW="7xl"
+        pt={{ base: '36', md: '32' }}
+        pb={{ base: '16', md: '24' }}
+        position="relative"
+        zIndex="1"
+      >
         <Flex
           direction={{ base: 'column', lg: 'row' }}
           align="center"
@@ -71,19 +77,21 @@ const HeroSection = () => {
           <Box flex="1" color="white" maxW={{ lg: '600px' }}>
             <Text
               fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
-              fontWeight="bold"
+              fontWeight="semi-bold"
               lineHeight="1.2"
               mb="6"
             >
-              Save time by building fast with Boldo Template
+              Save time by building <br className="hidden md:block" /> fast with
+              Boldo Template
             </Text>
             <Text
-              fontSize={{ base: 'lg', md: 'xl' }}
+              fontSize={{ base: 'lg', md: 'md' }}
               color="whiteAlpha.900"
               mb="8"
               lineHeight="1.6"
             >
-              Funding handshake buyer business-to-business metrics iPad partnership.
+              Funding handshake buyer business-to-business metrics iPad
+              partnership. <br className="hidden md:block" />
               First mover advantage innovator success deployment non-disclosure.
             </Text>
             <Flex gap="4" flexWrap="wrap">
@@ -93,6 +101,7 @@ const HeroSection = () => {
                 color="#0A2640"
                 px="8"
                 rounded="full"
+                fontWeight="bold"
                 _hover={{ bg: '#50c990' }}
               >
                 Buy template
@@ -111,16 +120,14 @@ const HeroSection = () => {
           </Box>
 
           {/* Right content - Dashboard Images */}
-          <Box flex="1" display={{ base: 'none', md: 'block' }} position="relative">
+          <Box
+            flex="1"
+            display={{ base: 'none', md: 'block' }}
+            position="relative"
+          >
             {/* Main dashboard */}
-            <Box
-              bg="#3e566c"
-              rounded="xl"
-              p="4"
-              mb="4"
-              boxShadow="xl"
-            >
-              <Box bg="#3e566c" rounded="md" p="2">
+            <Box bg="#3e566c" _hover={{ bg: '#466179' }} rounded="xl" p="4" mb="4" boxShadow="xl">
+              <Box bg="#3e566c" _hover={{ bg: '#466179' }}  rounded="md" p="2">
                 <Flex gap="2" mb="2">
                   <Box w="3" h="3" bg="#FF6056" rounded="full" />
                   <Box w="3" h="3" bg="#FFBD2E" rounded="full" />
@@ -131,22 +138,15 @@ const HeroSection = () => {
                   alt="Chart"
                   width={494}
                   height={150}
-                  className='md:ml-12 md:py-5'
+                  className="md:ml-12 md:py-5"
                   style={{ marginTop: '8px' }}
                 />
-
-                
               </Box>
             </Box>
 
             {/* Small charts */}
             <Flex gap="4" justify="space-between">
-              <Box
-                bg="#3e566c"
-                rounded="xl"
-                p="4"
-                flex="1"
-              >
+              <Box bg="#3e566c" _hover={{ bg: '#466179' }}  rounded="xl" p="4" flex="1">
                 <Flex gap="2" mb="2">
                   <Box w="2" h="2" bg="#FF6056" rounded="full" />
                   <Box w="2" h="2" bg="#FFBD2E" rounded="full" />
@@ -157,17 +157,12 @@ const HeroSection = () => {
                   alt="Chart"
                   width={139}
                   height={106}
-                  className='md:ml-12 md:py-5'
+                  className="md:ml-12 md:py-5"
                   style={{ marginTop: '8px' }}
                 />
               </Box>
 
-              <Box
-                bg="#3e566c"
-                rounded="xl"
-                p="4"
-                flex="1"
-              >
+              <Box bg="#3e566c" _hover={{ bg: '#466179' }}  rounded="xl" p="4" flex="1">
                 <Flex gap="2" mb="2">
                   <Box w="2" h="2" bg="#FF6056" rounded="full" />
                   <Box w="2" h="2" bg="#FFBD2E" rounded="full" />
@@ -178,7 +173,7 @@ const HeroSection = () => {
                   alt="Pie Chart"
                   width={201}
                   height={93}
-                  className='md:mx-5 md:py-5'
+                  className="md:mx-5 md:py-5"
                   style={{ marginTop: '8px' }}
                 />
               </Box>
@@ -202,7 +197,7 @@ const HeroSection = () => {
                 flex="none"
                 w={`${100 / 6}%`}
                 opacity="0.4"
-                _hover={{ opacity: "2" }}
+                _hover={{ opacity: '2' }}
                 transition="opacity 0.3s"
               >
                 <Image
@@ -214,7 +209,7 @@ const HeroSection = () => {
                 />
               </Box>
             ))}
-            
+
             {/* Duplicate set of logos for seamless loop */}
             {logos.map((logo, index) => (
               <Box
@@ -222,7 +217,7 @@ const HeroSection = () => {
                 flex="none"
                 w={`${100 / 10}%`}
                 opacity="0.4"
-                _hover={{ opacity: "2" }}
+                _hover={{ opacity: '2' }}
                 transition="opacity 0.3s"
               >
                 <Image

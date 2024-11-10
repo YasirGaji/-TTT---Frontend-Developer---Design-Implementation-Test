@@ -55,16 +55,16 @@ const testimonials = [
 const TestimonialCard = ({ text, name, title, image, isCenter }: TestimonialCardProps) => (
   <Box
     bg="white"
-    p={{ base: 4, md: 6 }}
+    p={{ base: 5, md: 6 }}
     rounded="lg"
     boxShadow="lg"
-    maxW={{ base: 'full', md: 'sm' }}
-    w={{ base: 'full', md: 350 }}
+    w={{ base: 250, md: 350 }}
     textAlign="left"
     mt={{ base: 6, md: 10 }}
-    height={isCenter ? { base: 'auto', md: '320px' } : { base: 'auto', md: '280px' }}
+    height={isCenter ? { base: 'full', md: '320px' } : { base: '200px', md: '280px' }}
     transform={isCenter ? 'scale(1.05)' : 'scale(1)'}
     transition="transform 0.3s ease-in-out"
+    mx="auto"
   >
     <Text mb="4" fontSize={{ base: 'lg', md: '2xl' }} fontWeight="normal" color="gray.700">
       “{text}”
@@ -72,7 +72,7 @@ const TestimonialCard = ({ text, name, title, image, isCenter }: TestimonialCard
     <Stack direction="row" align="center" spacing="4">
       <Avatar src={image} name={name} size="md" />
       <Box>
-        <Text fontWeight="bold" color="#0B2640">
+        <Text fontWeight="bold" fontSize="md" color="#0B2640">
           {name}
         </Text>
         <Text fontSize="sm" color="gray.500">
@@ -127,6 +127,7 @@ const TestimonialSection = () => {
             color="white"
             mb={{ base: 6, md: 0 }}
             size={{ base: '2xl', md: '3xl' }}
+            fontWeight="light"
           >
             An enterprise template to ramp <br className="hidden md:block" /> up
             your company website

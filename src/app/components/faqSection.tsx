@@ -51,9 +51,10 @@ const FaqSection = () => {
           <Box flex="1" pr={{ md: 8 }} mb={{ base: 8, md: 0 }}>
             <Heading
               as="h2"
-              fontSize={{ base: '2xl', md: '3xl' }}
+              fontSize={{ base: '2xl', md: '4xl' }}
               mb="4"
               color="#000000"
+              fontWeight="light"
             >
               We connect our customers <br className="hidden md:block" /> with
               the best, and help them <br className="hidden md:block" /> keep
@@ -61,8 +62,8 @@ const FaqSection = () => {
             </Heading>
           </Box>
 
-          <Box flex="1">
-            <VStack align="start" spacing={4} width="100%">
+          <Box>
+            <VStack align="start" spacing={4} width={{ base: "100%", md:"500px"}}>
               <Accordion allowToggle width="100%">
                 {faqData.map((faq, index) => (
                   <AccordionItem key={index} border="none">
@@ -72,7 +73,7 @@ const FaqSection = () => {
                         _hover={{ bg: 'none' }}
                         color="#000000"
                       >
-                        <Box flex="1" textAlign="left">
+                        <Box flex="1" fontWeight="semi-bold" fontSize="lg" textAlign="left">
                           {faq.question}
                         </Box>
                         <Box
@@ -89,10 +90,10 @@ const FaqSection = () => {
                         </Box>
                       </AccordionButton>
                     </Text>
-                    <AccordionPanel pb={4} pl={0} color="#0A2640">
+                    <AccordionPanel pb={10} pl={0} color="#0A2640">
                       {faq.answer}
                     </AccordionPanel>
-                    <Divider borderColor="gray.300" />
+                    <Divider borderColor="gray" mt={2} mb={5} />
                   </AccordionItem>
                 ))}
               </Accordion>

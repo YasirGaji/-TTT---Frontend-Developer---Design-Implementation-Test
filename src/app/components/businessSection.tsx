@@ -54,6 +54,7 @@ const BusinessSection = () => {
               lineHeight="tight"
               color="black"
               textAlign={{ base: 'center', md: 'left' }}
+              fontWeight="light"
             >
               We connect our customers <br className="hidden md:block" /> with
               the best, and help them <br className="hidden md:block" /> keep
@@ -72,6 +73,7 @@ const BusinessSection = () => {
                   rounded="lg"
                   boxShadow="md"
                   cursor="pointer"
+                  width={{base: 'full', md: 500}}
                   onClick={() => handleItemClick(index)}
                   _hover={{
                     boxShadow: 'lg',
@@ -111,12 +113,12 @@ const BusinessSection = () => {
               <Box
                 position="absolute"
                 bottom={{ base: '-80px', md: '-180px' }}
-                right={{ base: '10px', md: '160px' }}
+                right={{ base: '10px', md: '120px' }}
                 bg="white"
                 rounded="xl"
                 boxShadow="2xl"
-                width={{ base: 180, md: 251 }}
-                height={{ base: 280, md: 388 }}
+                width={291}
+                height={388}
                 zIndex={2}
                 overflow="hidden"
                 border="1px"

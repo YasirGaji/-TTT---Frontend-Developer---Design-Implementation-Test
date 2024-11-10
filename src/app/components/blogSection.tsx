@@ -29,17 +29,27 @@ const BlogCard = ({
   authorImage,
   image,
 }: BlogCardProps) => (
-  <Box borderRadius="lg" overflow="hidden" bg="white" p={4}>
-    <Image
-      src={image}
-      alt={title}
-      width="298px"
-      height="180px"
-      objectFit="cover"
-      borderRadius="xl"
+  <Box borderRadius="lg"  overflow="hidden" bg="white" p={4}>
+    <Box
+      display="flex"
+      justifyContent={{ base: 'center', md: 'flex-start' }}
       mb={4}
-    />
-    <Flex justify="flex-start" align="center" gap="4" mb={4}>
+    >
+      <Image
+        src={image}
+        alt={title}
+        width="298px"
+        height="180px"
+        objectFit="cover"
+        borderRadius="xl"
+      />
+    </Box>
+    <Flex
+      justify={{ base: 'center', md: 'flex-start' }}
+      align="center"
+      gap="4"
+      mb={4}
+    >
       <Text fontSize="sm" fontWeight="bold" color="#0A2640">
         {category}
       </Text>
@@ -49,19 +59,20 @@ const BlogCard = ({
     </Flex>
     <Heading
       as="h2"
-      textAlign="left"
-      fontSize="md"
+      textAlign={{ base: 'center', md: 'left' }}
+      fontSize="lg"
       color="#0A2640"
       width={300}
-      noOfLines={4}
+      fontWeight="light"
       mb={5}
+      mx={{ base: 'auto', md: '0' }}
     >
       {title}
     </Heading>
-    <VStack align="start" spacing={2}>
+    <VStack align={{ base: 'center', md: 'start' }} spacing={2}>
       <Box display="flex" alignItems="center">
         <Avatar size="sm" src={authorImage} name={authorName} mr={2} />
-        <Text fontSize="sm" color="gray.700">
+        <Text fontSize="sm" fontWeight="semi-bold" color="gray.700">
           {authorName}
         </Text>
       </Box>
@@ -102,10 +113,10 @@ const BlogSection = () => {
   return (
     <Box py={20} bg="white">
       <Container maxW="container.xl" textAlign="center">
-        <Text fontSize="sm" color="gray.500" mb={4}>
+        <Text fontSize="md" fontWeight="light" color="gray.500" mb={4}>
           Our Blog
         </Text>
-        <Heading as="h1" size="2xl" color="gray.800" mb={16}>
+        <Heading as="h1" size={{ base: 'xl', md: '3xl' }} fontWeight="light" color="gray.800" mb={16}>
           Value proposition accelerator product
           <br className="hidden md:block" />
           management venture

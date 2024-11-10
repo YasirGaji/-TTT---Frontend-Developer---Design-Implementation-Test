@@ -9,24 +9,24 @@ interface ServicesSectionProps {
 }
 
 const ServiceCard = ({ title, description, image, }: ServicesSectionProps) => (
-  <Box className="p-6 rounded-2xl">
-    <Box className="rounded-2xl mb-6 aspect-square flex items-center ">
+  <Box className="p-6 rounded-2xl" textAlign={{ base: 'center', md: 'left' }} mx="auto">
+    <Box className="rounded-2xl mb-6 aspect-square flex items-center " alignItems={{ base: 'center', md: 'left' }} justifyContent={{ base: 'center', md: 'left' }}>
       {image}
     </Box>
-    <Heading as="h3" size="md" className="mb-3 text-[#000000]">
+    <Heading as="h3" size="md" fontWeight="light" color="#000000" mb={3}>
       {title}
     </Heading>
-    <Text className="text-[#777777] mb-4">{description}</Text>
+    <Text color="#777777" mb={4}>
+      {description}
+    </Text>
 
-    <Box className="flex items-center cursor-pointer group">
-      <div className="flex items-center pb-1 border-b border-black">
-        <Text className="text-[#0A2640] font-medium">Explore page</Text>
-        <ArrowRight
-          className="ml-2 group-hover:translate-x-1 transition-transform"
-          size={20}
-          color="#0A2640"
-        />
-      </div>
+    <Box display="flex" justifyContent={{ base: 'center', md: 'left' }} alignItems={{ base: 'center', md: 'left' }} cursor="pointer" className="group">
+      <Box display="flex" alignItems="center" pb={1} borderBottom="1px solid black">
+        <Text color="#0A2640" fontWeight="bold">
+          Explore page
+        </Text>
+        <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} color="#0A2640" />
+      </Box>
     </Box>
   </Box>
 );
@@ -68,13 +68,14 @@ const ServicesSection = () => {
   return (
     <Box className="py-20 bg-white">
       <Container maxW="container.xl">
-        <Heading as="p" size="sm" className="text-center text-[#777777] mb-4">
+        <Heading as="p" size="sm" fontWeight="light" className="text-center text-[#777777] mb-4">
           Our Services
         </Heading>
         <Heading
           as="h1"
-          size="xl"
+          size={{ base: 'xl', md: '3xl' }}
           className="text-center text-[#000000] mb-16"
+          fontWeight="light"
         >
           Handshake infographic mass market <br className="hidden md:block" />{' '}
           crowdfunding iteration.

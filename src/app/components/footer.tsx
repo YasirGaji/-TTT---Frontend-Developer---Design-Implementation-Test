@@ -19,7 +19,7 @@ const Footer = () => {
   // Responsive values for padding and spacing
   const sectionPadding = useBreakpointValue({ base: '6', md: '12', lg: '24' });
   const containerSpacing = useBreakpointValue({ base: '4', md: '6', lg: '8' });
-  const headingSize = useBreakpointValue({ base: 'lg', md: 'xl' });
+  const headingSize = useBreakpointValue({ base: 'xl', md: '2xl' });
   const subscriptionHeight = useBreakpointValue({ base: 'auto', md: '96' });
 
   return (
@@ -37,7 +37,7 @@ const Footer = () => {
           <Box
             position="absolute"
             top={{ base: '-50%', md: '-75%' }}
-            left={{ base: '40%', md: '60%' }}
+            left={{ base: '40%', md: '62%' }}
             width="150%"
             height="150%"
             borderRadius="full"
@@ -57,6 +57,7 @@ const Footer = () => {
               size={headingSize}
               lineHeight="1.4"
               className="text-center max-w-2xl"
+              fontWeight="light"
             >
               An enterprise template to ramp
               <br className="hidden md:block" /> up your company website

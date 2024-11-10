@@ -5,23 +5,17 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
-  --font-geist-sans: 'Manrope', sans-serif;
-  --font-geist-mono: 'Manrope', sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
-    --font-geist-sans: 'Manrope', sans-serif;
-    --font-geist-mono: 'Manrope', sans-serif;
   }
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: -apple-system, Manrope, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-family: var(--font-geist-sans);
+  font-family: 'Manrope', sans-serif;
 }
