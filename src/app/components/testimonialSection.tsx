@@ -158,7 +158,7 @@ const TestimonialSection = () => {
         </Flex>
 
         {/* Carousel for Testimonials */}
-        <Flex justify="center" align="center" gap="4" overflow={{ base: ' ', md: 'hidden' }}>
+        <Flex justify="center" align="center" gap="4" overflow-x={{ base: 'hidden ', md: 'hidden' }}>
           {visibleTestimonials.map((testimonial, index) => (
             <Box
             key={index}
