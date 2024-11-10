@@ -35,8 +35,8 @@ const BusinessSection = () => {
   };
 
   return (
-    <Box className="md:py-20 bg-white">
-      <Container maxW="7xl" py={{ base: 0, md: 16 }}>
+    <Box className="md:py-20 bg-white pb-10">
+      <Container maxW="7xl" py={{ base: 0, md: 16 }} mb={{ base: 0, md: 40 }}>
         <Stack
           direction={{ base: 'column', md: 'row' }}
           spacing={{ base: 8, md: 12 }}
