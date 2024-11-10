@@ -202,7 +202,7 @@ const HeroSection = () => {
                 flex="none"
                 w={`${100 / 6}%`}
                 opacity="0.4"
-                _hover={{ opacity: "0.6" }}
+                _hover={{ opacity: "2" }}
                 transition="opacity 0.3s"
               >
                 <Image
@@ -214,14 +214,15 @@ const HeroSection = () => {
                 />
               </Box>
             ))}
+            
             {/* Duplicate set of logos for seamless loop */}
             {logos.map((logo, index) => (
               <Box
                 key={`second-${index}`}
                 flex="none"
-                w={`${100 / 6}%`}
+                w={`${100 / 10}%`}
                 opacity="0.4"
-                _hover={{ opacity: "0.6" }}
+                _hover={{ opacity: "2" }}
                 transition="opacity 0.3s"
               >
                 <Image

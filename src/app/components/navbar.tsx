@@ -12,6 +12,7 @@ import {
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 interface NavLinkProps {
   children?: string;
@@ -37,16 +38,33 @@ const NavLink = ({ children, href }: NavLinkProps) => (
 
 const Navbar = () => {
   const { isOpen, onToggle } = useDisclosure();
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      setIsScrolled(scrollPosition > 20);
+    };
+
+    // scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
     <Box
       as="nav"
-      bg={{ base: isOpen ? '#0A2640' : 'transparent', md: 'transparent' }}
+      bg={{ 
+        base: isOpen ? '#0A2640' : isScrolled ? '#0A2640' : 'transparent', 
+        md: isScrolled ? '#0A2640' : 'transparent' 
+      }}
       px={4}
-      position="absolute"
+      position="fixed" 
       w="full"
-      zIndex={10}
-      transition="background-color 0.2s"
+      zIndex={100}
+      transition="all 0.3s ease-in-out"
+      boxShadow={isScrolled ? 'md' : 'none'}
     >
       <Flex
         h={28}
@@ -127,6 +145,7 @@ const Navbar = () => {
             bg="white"
             color="#0A2640"
             w="full"
+            className='md:w-[128px] '
             rounded="full"
             _hover={{
               bg: 'whiteAlpha.900',
